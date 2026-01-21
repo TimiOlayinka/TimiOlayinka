@@ -2,10 +2,10 @@
 
 I am an **Analytics Engineer** focused on building reliable, high-quality data pipelines.
 
-I combine advanced **SQL** and **Python** skills with the strategic frameworks of the **Applied Data Governance Practitioner (ADGP)** certification (currently pursuing).
+I combine advanced **SQL** and **Python** skills with the DAMA frameworks to ensure high-quality and trusted data.
 
 **My Value Proposition:**
-I don't just write queries; I engineer trusted data assets. I bridge the gap between messy raw data and actionable business insights, ensuring every pipeline is documented, tested, and governed.
+I focus on collaboration above processes. Making sure that I work as a partner to ensure solutions add value to your business. Every pipeline will be documented, tested and governed. 
 
 ---
 
@@ -30,8 +30,6 @@ I don't just write queries; I engineer trusted data assets. I bridge the gap bet
 ### 🚀 Available for Projects
 If you need an engineer who cares about data quality as much as speed:
 
-* **Hire me on Upwork:** [Link to your Upwork Profile]
-* **LinkedIn:** [Link to your LinkedIn]
+* **Hire me on Upwork:** [[Link to your Upwork Profile]](https://www.upwork.com/freelancers/~017051376282b81462?mp_source=share)
+* **LinkedIn:** [[Link to your LinkedIn]](https://www.linkedin.com/in/timi-olayinka-8b299392/)
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![SQL](
