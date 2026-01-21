@@ -19,14 +19,6 @@ I focus on collaboration above processes. Making sure that I work as a partner t
 
 ---
 
-### 📂 Portfolio Highlights
-
-* **[Link to SQL Repo]:** Complex transformations and logic optimization.
-* **[Link to Python Repo]:** Data quality automation and profiling scripts.
-* **[Link to Documentation]:** Examples of Data Dictionaries and SOPs.
-
----
-
 ### 🚀 Available for Projects
 If you need an engineer who cares about data quality as much as speed:
 
