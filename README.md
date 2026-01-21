@@ -30,6 +30,6 @@ I focus on collaboration above processes. Making sure that I work as a partner t
 ### 🚀 Available for Projects
 If you need an engineer who cares about data quality as much as speed:
 
-* **Hire me on Upwork:** [[Link to your Upwork Profile]](https://www.upwork.com/freelancers/~017051376282b81462?mp_source=share)
-* **LinkedIn:** [[Link to your LinkedIn]](https://www.linkedin.com/in/timi-olayinka-8b299392/)
+* **Hire me on Upwork:** [[Timi Olayinka - Upwork]](https://www.upwork.com/freelancers/~017051376282b81462?mp_source=share)
+* **LinkedIn:** [[Timi Olayinka - LinkedIn]](https://www.linkedin.com/in/timi-olayinka-8b299392/)
 
