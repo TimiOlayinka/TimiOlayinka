@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS `{{lake_project_id}}.Finance.dailyexchangerates`
+(
+currencyid	INT64,
+currency_name	STRING,
+date	DATE,
+avg_exchange_rate	NUMERIC,
+etl_loaded_datetime	TIMESTAMP
+)	
+CLUSTER BY currencyid, date
