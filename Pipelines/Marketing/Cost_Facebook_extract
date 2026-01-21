@@ -1,0 +1,88 @@
+
+import pandas as pd
+import json
+import backoff
+from facebook_business.api import FacebookAdsApi
+from facebook_business.adobjects.user import User
+from google.cloud import bigquery
+from DataPlatform import GCP
+
+# use exponential backoff to retry failed calls in case valid data exists.
+@backoff.on_exception(backoff.expo, Exception, max_tries=3)
+def get_ad_data(account: object, access_token: str, preset: str) -> object :
+    # preset https://developers.facebook.com/docs/marketing-api/insights/parameters/v15.0
+    from facebook_business.adobjects.adsinsights import AdsInsights
+    import facebook_business.api
+    
+    params = {
+        "date_preset": preset
+        ,"time_increment": 1
+        ,"level" : "ad" 
+        ,"fields": [
+            AdsInsights.Field.account_id,
+            AdsInsights.Field.account_name,
+            AdsInsights.Field.campaign_id,
+            AdsInsights.Field.campaign_name,
+            AdsInsights.Field.adset_id,
+            AdsInsights.Field.adset_name,
+            AdsInsights.Field.ad_id,
+            AdsInsights.Field.ad_name,
+            AdsInsights.Field.spend,
+            AdsInsights.Field.impressions,
+            AdsInsights.Field.reach,       
+            AdsInsights.Field.unique_clicks  
+        ]
+        ,"access_token": access_token
+    }
+
+    insight = account.get_insights(params=params)
+
+    try :
+        if type(insight) != facebook_business.api.Cursor :
+            response_status = insight.get('Status', None)
+        else :
+            response_status = 200
+    except TypeError :
+        pass
+    if response_status != 200 :
+        print(f"error - response status: {insight['Status']} Message: {insight['Response']['Message']}")
+        raise Exception
+    else :
+        return insight
+
+task_conn_id = "{{task_conn_id}}"
+brand = "{{brand}}"
+lake_proj_id = "{{lake_project_id}}"
+proc_proj_id = "{{proc_project_id}}"
+table_name = f"{{target_table}}_{brand}"
+api_version = "{{api_version}}" # sometimes the failure of api is due to the api version, it needs to be updated on the server
+
+access_string = GCP.access_secret_version(proc_proj_id, task_conn_id, 'latest')
+access_details = json.loads(access_string)
+access_token = access_details.get('access_token')
+
+FacebookAdsApi.init(**access_details, api_version=api_version)
+me = User(fbid='me')
+accounts_list = me.get_ad_accounts()
+df = pd.DataFrame()
+# Create dataframe outside of function to manage imports, but works better
+# than building list of lists, as parsing becomes more difficult when built up
+# and rowcount very small.
+
+for account in accounts_list :
+    try :
+        last28 = pd.DataFrame(get_ad_data(account=account, access_token=access_token, preset='last_28d'))
+        today = pd.DataFrame(get_ad_data(account=account, access_token=access_token, preset='today'))
+        df = pd.concat([df, last28, today])
+
+    except Exception as e :
+        print(e)
+        pass #ensure response exceptions do not interrupt later valid ad campaigns
+    
+if len(df.index) > 0 :      
+    schema = [bigquery.SchemaField(c, 'STRING') for c in df.columns.values.tolist()]
+
+    client = bigquery.Client(project=lake_proj_id)
+    job_config = bigquery.LoadJobConfig(write_disposition="WRITE_TRUNCATE", schema=schema)
+    job = client.load_table_from_dataframe(df, table_name, job_config=job_config)
+    job.result()
