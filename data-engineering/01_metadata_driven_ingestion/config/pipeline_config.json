@@ -1,0 +1,37 @@
+{
+  "pipeline": "core_ingestion/customer_activity_daily",
+  "description": "Generic daily ingestion flow for a source-aligned analytical dataset.",
+  "defaults": {
+    "retry_count": 2,
+    "timeout_seconds": 900
+  },
+  "tasks": {
+    "extract_source_file": {
+      "task_run_order": 10,
+      "task_type": "file_extract",
+      "command": "extract --source {{ params.source_name }} --date {{ params.business_date }}",
+      "params": {
+        "source_name": "source_a",
+        "business_date": "2026-04-29"
+      }
+    },
+    "stage_raw_records": {
+      "task_run_order": 20,
+      "task_type": "sql",
+      "depends_on": ["extract_source_file"],
+      "command": "run-sql --file sql/stage_raw_records.sql --execution-id {{ execution_id }}"
+    },
+    "apply_conformance_rules": {
+      "task_run_order": 30,
+      "task_type": "python",
+      "depends_on": ["stage_raw_records"],
+      "command": "python transforms/apply_conformance_rules.py --execution-id {{ execution_id }}"
+    },
+    "publish_quality_report": {
+      "task_run_order": 40,
+      "task_type": "quality_check",
+      "depends_on": ["apply_conformance_rules"],
+      "command": "quality-report --pipeline {{ pipeline }} --execution-id {{ execution_id }}"
+    }
+  }
+}

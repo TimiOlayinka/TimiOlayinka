@@ -1,27 +1,37 @@
-### Hi there! I'm Timi Olayinka 👋
+### Hi, I'm Timi Olayinka
 
-I am an **Analytics Engineer** focused on building reliable, high-quality data pipelines.
+I am an analytics and data engineer focused on building reliable pipelines, governed warehouse models, and practical data quality checks.
 
-I combine advanced **SQL** and **Python** skills with the DAMA frameworks to ensure high-quality and trusted data.
+I work with SQL, Python, orchestration patterns, lineage, data modelling, and delivery documentation. My preference is to make data work easy to review: clear configs, small tested utilities, readable SQL, and change-control notes that explain what is being released.
 
-**My Value Proposition:**
-I focus on collaboration above processes. Making sure that I work as a partner to ensure solutions add value to your business. Every pipeline will be documented, tested and governed. 
+## Portfolio Projects
 
----
+The `data-engineering` folder contains anonymized, production-style work samples. They use synthetic names and generic schemas so they are safe to review publicly.
 
-### 🛠️ Tech Stack & Focus
+| Project | What it shows |
+| --- | --- |
+| [Metadata Driven Ingestion](data-engineering/01_metadata_driven_ingestion) | Config-first orchestration, dependency checks, and deterministic run-plan generation. |
+| [Event Stream Quality Gate](data-engineering/02_event_stream_quality_gate) | JSON event contract validation, quarantine output, and monitoring-ready batch summaries. |
+| [SQL Lineage Audit](data-engineering/03_sql_lineage_audit) | Source-to-target dependency extraction from SQL files for warehouse impact review. |
+| [Warehouse Change Control](data-engineering/04_warehouse_change_control) | DDL, update/check scripts, release manifest validation, and review-friendly naming. |
 
-| **Core Skills** | **Application** |
-| :--- | :--- |
-| **SQL** | Advanced transformation (dbt), data modeling, and integrity audits. |
-| **Python** | Automated data profiling, quality checks (Great Expectations), and cleaning. |
-| **Governance** | Implementing data dictionaries, lineage, and reliable metric definitions. |
+Run all project tests with:
 
----
+```bash
+python data-engineering/run_project_tests.py
+```
 
-### 🚀 Available for Projects
-If you need an engineer who cares about data quality as much as speed:
+## Core Skills
 
-* **Hire me on Upwork:** [[Timi Olayinka - Upwork]](https://www.upwork.com/freelancers/~017051376282b81462?mp_source=share)
-* **LinkedIn:** [[Timi Olayinka - LinkedIn]](https://www.linkedin.com/in/timi-olayinka-8b299392/)
+| Skill | Application |
+| --- | --- |
+| SQL | Warehouse modelling, transformations, validation checks, and lineage review. |
+| Python | Pipeline utilities, contract validation, metadata parsing, and automated tests. |
+| Governance | Naming conventions, change manifests, data quality gates, and documentation. |
 
+## Available for Projects
+
+If you need a data engineer who cares about delivery quality as much as speed:
+
+- [Hire me on Upwork](https://www.upwork.com/freelancers/~017051376282b81462?mp_source=share)
+- [Connect with me on LinkedIn](https://www.linkedin.com/in/timi-olayinka-8b299392/)

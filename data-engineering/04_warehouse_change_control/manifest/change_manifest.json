@@ -1,0 +1,15 @@
+{
+  "change_id": "DPLAT-104",
+  "summary": "Create and maintain a generic entity snapshot dimension.",
+  "risk_level": "medium",
+  "deployment_files": [
+    "deployments/ddls/DPLAT-104_ddls.sql"
+  ],
+  "update_scripts": [
+    "maintenance/update_scripts/update-entity_snapshot.sql"
+  ],
+  "check_scripts": [
+    "maintenance/check_scripts/check-entity_snapshot.sql"
+  ],
+  "rollback_note": "Drop the table only if no dependent analytical models have been released."
+}

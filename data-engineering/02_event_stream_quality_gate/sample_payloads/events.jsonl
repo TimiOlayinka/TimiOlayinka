@@ -1,0 +1,4 @@
+{"event_id":"evt_001","event_name":"entity_created","event_ts":"2026-04-29T08:00:00Z","source_system":"source_a","payload":{"entity_id":"ent_001","event_value":1}}
+{"event_id":"evt_002","event_name":"entity_updated","event_ts":"2026-04-29T08:05:00Z","source_system":"source_a","payload":{"entity_id":"ent_001","event_value":2.5}}
+{"event_id":"evt_003","event_name":"entity_removed","event_ts":"2026-04-29T08:06:00Z","source_system":"source_a","payload":{"entity_id":"ent_002","event_value":3}}
+{"event_id":"evt_004","event_name":"entity_status_changed","event_ts":"2026-04-29T08:07:00Z","source_system":"source_b","payload":{"event_value":4}}

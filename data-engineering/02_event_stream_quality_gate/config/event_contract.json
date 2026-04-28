@@ -1,0 +1,19 @@
+{
+  "contract_name": "generic_activity_event_v1",
+  "required_fields": {
+    "event_id": "string",
+    "event_name": "string",
+    "event_ts": "string",
+    "source_system": "string",
+    "payload": "object"
+  },
+  "payload_required_fields": {
+    "entity_id": "string",
+    "event_value": "number"
+  },
+  "accepted_event_names": [
+    "entity_created",
+    "entity_updated",
+    "entity_status_changed"
+  ]
+}
