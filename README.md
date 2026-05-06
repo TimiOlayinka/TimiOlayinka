@@ -1,37 +1,65 @@
-### Hi, I'm Timi Olayinka
+<div align="center">
+  <h1>Timi Olayinka</h1>
+  <h3>Enterprise Analytics Engineer & Corporate MC</h3>
+  <p>Crafting premium data architectures and unforgettable event experiences.</p>
+  
+  <a href="https://timiolayinka.co.uk"><b>🌐 View Portfolio: timiolayinka.co.uk</b></a>
+</div>
 
-I am an analytics and data engineer focused on building reliable pipelines, governed warehouse models, and practical data quality checks.
+---
 
-I work with SQL, Python, orchestration patterns, lineage, data modelling, and delivery documentation. My preference is to make data work easy to review: clear configs, small tested utilities, readable SQL, and change-control notes that explain what is being released.
+## 🏛️ About Me
 
-## Portfolio Projects
+I am an **Analytics & Data Engineer** specializing in the design, orchestration, and governance of enterprise-scale data platforms. I build reliable pipelines, governed warehouse models, and proactive data quality frameworks that establish trust between the engineering layer and the C-Suite.
 
-The `data-engineering` folder contains anonymized, production-style work samples. They use synthetic names and generic schemas so they are safe to review publicly.
+Beyond the screen, I am a professional **Corporate MC**, bringing the same level of architectural precision and dynamic execution to high-stakes stages, award ceremonies, and corporate galas.
 
-| Project | What it shows |
+---
+
+## ⚙️ Core Engineering Philosophy
+
+When building data ecosystems, my preference is always for traceability and maintainability over unnecessary complexity:
+- **Medallion Architecture:** Establishing clear Bronze, Silver, and Gold layers for unshakeable data provenance.
+- **Data Quality as a First-Class Citizen:** Implementing rigorous quality gates to prevent broken data from reaching downstream BI.
+- **Readable & Reviewable:** Clear configs, small tested utilities, readable SQL, and strict change-control manifests.
+
+---
+
+## 🛠️ Technical Arsenal
+
+- **Data Warehousing:** Snowflake, Redshift, BigQuery
+- **Data Modelling:** dbt (Data Build Tool), Kimball Methodology, Star Schemas
+- **Orchestration:** Apache Airflow, Prefect, Dagster
+- **Languages:** Advanced SQL, Python
+- **Business Intelligence:** Power BI, Tableau, Looker
+- **Cloud Ecosystems:** AWS, Google Cloud Platform (GCP)
+
+---
+
+## 📂 Featured Work Samples
+
+Below are anonymized, production-style work samples located within this repository's `data-engineering` folder. They use synthetic schemas to demonstrate my implementation of enterprise-grade solutions.
+
+| Project | What it demonstrates |
 | --- | --- |
-| [Metadata Driven Ingestion](data-engineering/01_metadata_driven_ingestion) | Config-first orchestration, dependency checks, and deterministic run-plan generation. |
-| [Event Stream Quality Gate](data-engineering/02_event_stream_quality_gate) | JSON event contract validation, quarantine output, and monitoring-ready batch summaries. |
-| [SQL Lineage Audit](data-engineering/03_sql_lineage_audit) | Source-to-target dependency extraction from SQL files for warehouse impact review. |
-| [Warehouse Change Control](data-engineering/04_warehouse_change_control) | DDL, update/check scripts, release manifest validation, and review-friendly naming. |
+| **[Metadata Driven Ingestion](./data-engineering/01_metadata_driven_ingestion)** | Config-first orchestration, dependency checks, and deterministic run-plan generation. |
+| **[Event Stream Quality Gate](./data-engineering/02_event_stream_quality_gate)** | JSON event contract validation, quarantine output, and monitoring-ready batch summaries. |
+| **[SQL Lineage Audit](./data-engineering/03_sql_lineage_audit)** | Source-to-target dependency extraction from SQL files for warehouse impact review. |
+| **[Warehouse Change Control](./data-engineering/04_warehouse_change_control)** | DDL, update/check scripts, release manifest validation, and review-friendly naming. |
 
-Run all project tests with:
+> **Note:** Run all project tests locally with: `python data-engineering/run_project_tests.py`
 
-```bash
-python data-engineering/run_project_tests.py
-```
+---
 
-## Core Skills
+## 📩 Let's Connect
 
-| Skill | Application |
-| --- | --- |
-| SQL | Warehouse modelling, transformations, validation checks, and lineage review. |
-| Python | Pipeline utilities, contract validation, metadata parsing, and automated tests. |
-| Governance | Naming conventions, change manifests, data quality gates, and documentation. |
+Whether you need a data engineer who cares about delivery quality as much as speed, or a Corporate MC to elevate your next event:
 
-## Available for Projects
+- 👔 [Connect on LinkedIn](https://www.linkedin.com/in/timi-olayinka-8b299392/)
+- 💼 [Hire me on Upwork](https://www.upwork.com/freelancers/~017051376282b81462)
+- 🌐 [Visit my Official Website](https://timiolayinka.co.uk)
 
-If you need a data engineer who cares about delivery quality as much as speed:
-
-- [Hire me on Upwork](https://www.upwork.com/freelancers/~017051376282b81462?mp_source=share)
-- [Connect with me on LinkedIn](https://www.linkedin.com/in/timi-olayinka-8b299392/)
+<div align="center">
+  <br/>
+  <i>"Architecture is not just about moving data from point A to B; it's about building a foundation of trust."</i>
+</div>
