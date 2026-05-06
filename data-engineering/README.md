@@ -4,10 +4,10 @@ This folder contains four anonymized, self-contained projects. Each one is small
 
 ## Projects
 
-1. `01_metadata_driven_ingestion` builds a resolved execution plan from pipeline metadata.
-2. `02_event_stream_quality_gate` validates incoming event payloads and produces quarantine metrics.
-3. `03_sql_lineage_audit` extracts source-to-target dependencies from SQL files.
-4. `04_warehouse_change_control` validates a release manifest covering DDL, update scripts, and check scripts.
+1. `01_redshift_warehouse_modernisation` builds a resolved execution plan from pipeline metadata.
+2. `02_gcp_realtime_pipelines` validates incoming event payloads and produces quarantine metrics.
+3. `03_global_logistics_analytics` extracts source-to-target dependencies from SQL files.
+4. `04_enterprise_data_quality` validates a release manifest covering DDL, update scripts, and check scripts.
 
 ## Review Path
 

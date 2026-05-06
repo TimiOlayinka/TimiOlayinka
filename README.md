@@ -42,10 +42,10 @@ Below are anonymized, production-style work samples located within this reposito
 
 | Project | What it demonstrates |
 | --- | --- |
-| **[Metadata Driven Ingestion](./data-engineering/01_metadata_driven_ingestion)** | Config-first orchestration, dependency checks, and deterministic run-plan generation. |
-| **[Event Stream Quality Gate](./data-engineering/02_event_stream_quality_gate)** | JSON event contract validation, quarantine output, and monitoring-ready batch summaries. |
-| **[SQL Lineage Audit](./data-engineering/03_sql_lineage_audit)** | Source-to-target dependency extraction from SQL files for warehouse impact review. |
-| **[Warehouse Change Control](./data-engineering/04_warehouse_change_control)** | DDL, update/check scripts, release manifest validation, and review-friendly naming. |
+| **[Redshift Data Warehouse Modernisation](./data-engineering/01_redshift_warehouse_modernisation)** | Config-first orchestration, dependency checks, and deterministic run-plan generation. |
+| **[GCP Modernisation & Real-Time Pipelines](./data-engineering/02_gcp_realtime_pipelines)** | JSON event contract validation, quarantine output, and monitoring-ready batch summaries. |
+| **[Global Logistics Analytics Ecosystem](./data-engineering/03_global_logistics_analytics)** | Source-to-target dependency extraction from SQL files for warehouse impact review. |
+| **[Enterprise Data Quality Framework](./data-engineering/04_enterprise_data_quality)** | DDL, update/check scripts, release manifest validation, and review-friendly naming. |
 
 > **Note:** Run all project tests locally with: `python data-engineering/run_project_tests.py`
 

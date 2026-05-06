@@ -9,10 +9,10 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 TEST_FILES = [
-    "data-engineering/01_metadata_driven_ingestion/tests/test_metadata_pipeline.py",
-    "data-engineering/02_event_stream_quality_gate/tests/test_event_quality_gate.py",
-    "data-engineering/03_sql_lineage_audit/tests/test_sql_lineage_audit.py",
-    "data-engineering/04_warehouse_change_control/tests/test_change_manifest.py",
+    "data-engineering/01_redshift_warehouse_modernisation/tests/test_metadata_pipeline.py",
+    "data-engineering/02_gcp_realtime_pipelines/tests/test_event_quality_gate.py",
+    "data-engineering/03_global_logistics_analytics/tests/test_sql_lineage_audit.py",
+    "data-engineering/04_enterprise_data_quality/tests/test_change_manifest.py",
 ]
 
 
