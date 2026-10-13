@@ -1,0 +1,132 @@
+{
+  "project_name": "enterprise_analytics_marts",
+  "sources": [
+    {
+      "name": "wms_parcel_shipments",
+      "database": "logistics_raw",
+      "schema": "rdl_wms",
+      "freshness": {
+        "warn_after_hours": 2,
+        "error_after_hours": 6
+      }
+    },
+    {
+      "name": "subscription_billing_events",
+      "database": "commerce_raw",
+      "schema": "rdl_subscriptions",
+      "freshness": {
+        "warn_after_hours": 6,
+        "error_after_hours": 12
+      }
+    },
+    {
+      "name": "smg_nps_surveys",
+      "database": "cx_raw",
+      "schema": "rdl_cx",
+      "freshness": {
+        "warn_after_hours": 12,
+        "error_after_hours": 24
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "fct_otif_parcel_fulfillment",
+      "layer": "marts",
+      "materialized": "incremental",
+      "contract_enforced": true,
+      "owner": "supply-chain-analytics@enterprise.co.uk",
+      "description": "End-to-end supply chain OTIF parcel fulfillment mart tracking 16.5M+ parcels and warehouse robotics SLAs.",
+      "finops": {
+        "partition_by": "dispatched_date",
+        "cluster_by": ["fulfillment_hub_id", "carrier_code", "otif_status"]
+      },
+      "columns": [
+        {
+          "name": "parcel_fulfillment_sk",
+          "data_type": "STRING",
+          "description": "Deterministic SHA-256 surrogate key for parcel_id and fulfillment_hub_id.",
+          "is_primary_key": true,
+          "tests": ["unique", "not_null"]
+        },
+        {
+          "name": "dispatched_date",
+          "data_type": "DATE",
+          "description": "Partition date when the parcel was dispatched from the fulfillment hub.",
+          "is_primary_key": false,
+          "tests": ["not_null"]
+        },
+        {
+          "name": "otif_status",
+          "data_type": "STRING",
+          "description": "On-Time In-Full classification (OTIF_MET, LATE_DELIVERY, SHORT_SHIPPED, OTIF_FAILED_BOTH).",
+          "is_primary_key": false,
+          "tests": ["not_null", "accepted_values"]
+        }
+      ]
+    },
+    {
+      "name": "fct_subscription_mrr_retention",
+      "layer": "adl",
+      "materialized": "incremental",
+      "contract_enforced": true,
+      "owner": "commercial-analytics@enterprise.co.uk",
+      "description": "Monthly recurring revenue (MRR) and subscriber cohort retention mart across 894K+ active subscriptions.",
+      "finops": {
+        "dist_key": "subscriber_id",
+        "sort_keys": ["activity_month", "brand_code", "cohort_month"]
+      },
+      "columns": [
+        {
+          "name": "subscription_month_sk",
+          "data_type": "VARCHAR(32)",
+          "description": "Surrogate key combining subscriber_id and activity_month.",
+          "is_primary_key": true,
+          "tests": ["unique", "not_null"]
+        },
+        {
+          "name": "current_mrr_gbp",
+          "data_type": "NUMERIC(12,2)",
+          "description": "Net monthly recurring revenue billed in GBP for the subscriber in the activity month.",
+          "is_primary_key": false,
+          "tests": ["not_null"]
+        },
+        {
+          "name": "mrr_movement_type",
+          "data_type": "VARCHAR(24)",
+          "description": "MRR bridge classification (NEW, EXPANSION, CONTRACTION, CHURNED, REACTIVATED, RETAINED).",
+          "is_primary_key": false,
+          "tests": ["not_null", "accepted_values"]
+        }
+      ]
+    },
+    {
+      "name": "dim_fulfillment_hub",
+      "layer": "odl",
+      "materialized": "table",
+      "contract_enforced": true,
+      "owner": "supply-chain-analytics@enterprise.co.uk",
+      "description": "Conformed warehouse fulfillment hub dimension with robotics automation tier attributes.",
+      "finops": {
+        "dist_key": "ALL",
+        "sort_keys": ["fulfillment_hub_id"]
+      },
+      "columns": [
+        {
+          "name": "fulfillment_hub_sk",
+          "data_type": "VARCHAR(32)",
+          "description": "Primary surrogate key for the fulfillment hub dimension.",
+          "is_primary_key": true,
+          "tests": ["unique", "not_null"]
+        },
+        {
+          "name": "fulfillment_hub_id",
+          "data_type": "VARCHAR(16)",
+          "description": "Natural business identifier for the international logistics hub.",
+          "is_primary_key": false,
+          "tests": ["not_null"]
+        }
+      ]
+    }
+  ]
+}

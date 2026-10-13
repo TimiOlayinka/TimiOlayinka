@@ -1,0 +1,29 @@
+name: Data Engineering & dbt Governance CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  unit-tests-and-quality-gates:
+    name: Run Portfolio Test Suite & dbt Contract Gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Execute all 5 Data Engineering & dbt Governance Test Suites
+        run: python data-engineering/run_project_tests.py
+
+      - name: Verify dbt Governance & FinOps SLA Gate (>= 95% Trusted Coverage)
+        run: |
+          python data-engineering/05_dbt_governance_and_slim_ci/src/dbt_contract_gate.py \
+            --registry data-engineering/05_dbt_governance_and_slim_ci/sample_dbt_project/schema_manifest.json \
+            --min-coverage 95.0

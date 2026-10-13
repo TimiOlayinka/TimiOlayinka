@@ -13,6 +13,7 @@ TEST_FILES = [
     "data-engineering/02_gcp_realtime_pipelines/tests/test_event_quality_gate.py",
     "data-engineering/03_global_logistics_analytics/tests/test_sql_lineage_audit.py",
     "data-engineering/04_enterprise_data_quality/tests/test_change_manifest.py",
+    "data-engineering/05_dbt_governance_and_slim_ci/tests/test_dbt_contract_gate.py",
 ]
 
 
