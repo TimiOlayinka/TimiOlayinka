@@ -1,7 +1,7 @@
 # GCP Modernisation & Real-Time Pipelines
 
 ## The Business Challenge
-A fast-fashion retail giant (Boohoo Group) was scaling rapidly, but their legacy daily batch-processing infrastructure couldn't keep up with the real-time demands of modern e-commerce. Marketing and supply chain teams were making decisions on stale data, leading to stockouts and missed revenue opportunities during peak sales events like Black Friday.
+A multi-brand e-commerce retail group (7 global brands across 5 commerce platforms) was scaling rapidly, but their legacy daily batch-processing infrastructure couldn't keep up with the real-time demands of modern e-commerce. Marketing and supply chain teams were making decisions on stale data, leading to stockouts and missed revenue opportunities during peak sales events like Black Friday.
 
 ## The Solution
 I led the migration of critical data workloads to the Google Cloud Platform (GCP). I designed and deployed low-latency, real-time data pipelines using Apache Kafka and Google Dataflow to capture clickstream, transaction, and inventory events the moment they happened.

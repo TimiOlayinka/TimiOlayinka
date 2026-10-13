@@ -1,7 +1,7 @@
 # Global Logistics Analytics Ecosystem
 
 ## The Business Challenge
-A massive e-commerce logistics group (The Hut Group) was struggling with fragmented supply chain data. Their highly automated, AI-powered warehouse systems were generating terabytes of operational data, but it was siloed across different operational databases. This prevented leadership from getting a holistic view of global inventory, fulfillment bottlenecks, and shipping costs.
+A global e-commerce and automated fulfillment group (16.5M+ annual parcels across 5 international hubs) was struggling with fragmented supply chain data. Their highly automated, AI-powered warehouse robotics systems were generating terabytes of operational data, but it was siloed across different operational databases. This prevented leadership from getting a holistic view of global inventory, fulfillment bottlenecks, and shipping costs.
 
 ## The Solution
 I architected a modern, centralized analytics ecosystem designed specifically to ingest and unify complex global logistics data. Utilizing advanced SQL modelling and a cloud-native data stack, I built out enterprise-grade data models that abstracted the complexity of the raw warehouse systems into intuitive, business-ready datasets.
