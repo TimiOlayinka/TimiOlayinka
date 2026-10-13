@@ -1,7 +1,7 @@
 # Redshift Data Warehouse Modernisation
 
 ## The Business Challenge
-A major international health and wellness retailer (1,300+ stores & e-commerce estate) was constrained by legacy, siloed databases that caused overnight ETL jobs to frequently fail, leaving business analysts without reliable morning reports. They needed a unified, high-performance Enterprise Data Warehouse (EDW) to serve as a single source of truth for global sales, customer experience, and inventory data.
+A major international health and wellness retailer (store and e-commerce estate) was constrained by legacy, siloed databases that caused overnight ETL jobs to frequently fail, leaving business analysts without reliable morning reports. They needed a unified, high-performance Enterprise Data Warehouse (EDW) to serve as a single source of truth for global sales, customer experience, and inventory data.
 
 ## The Solution
 I spearheaded the migration to an Amazon Redshift data warehouse, establishing a clear **Medallion Architecture**. By leveraging Python for metadata-driven ingestion and dbt for transformations, we decoupled data extraction from business logic. 

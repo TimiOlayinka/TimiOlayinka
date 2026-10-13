@@ -22,7 +22,7 @@
 
 ## 🏛️ Executive Summary
 
-I am a **Senior Analytics Engineer & CDMP-Certified Data Architect** with **8+ years of enterprise impact** across FTSE 250 / global multi-brand **Health & Wellness Retail**, **E-Commerce**, and **Automated Supply Chain & Logistics** estates. I specialize in turning fragile, slow, or high-cost legacy SQL pipelines into modular, contract-tested **dbt** and **Medallion (RDL → ODL → ADL)** platforms that executives and analysts trust.
+I am a **Senior Analytics Engineer & CDMP-Certified Data Architect** with **8+ years of enterprise impact** across multi-brand **Health & Wellness Retail**, **E-Commerce**, and **Automated Supply Chain & Logistics** estates. I specialize in turning fragile, slow, or high-cost legacy SQL pipelines into modular, contract-tested **dbt** and **Medallion (RDL → ODL → ADL)** platforms that executives and analysts trust.
 
 ### 📈 Quantified Enterprise Impact
 - **1,420+ Production dbt & SQL Mart Deployments** across Retail, E-Commerce, Supply Chain, Subscriptions & Finance (**£830M+ turnover estate**), ranked **#1 in the data department for business modeling focus (76.1%)**.
