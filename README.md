@@ -26,7 +26,7 @@ I am a **Senior Analytics Engineer & CDMP-Certified Data Architect** with **8+ y
 
 ### 📈 Quantified Enterprise Impact
 - **1,420+ Production dbt & SQL Mart Deployments** across Retail, E-Commerce, Supply Chain, Subscriptions & Finance (**£830M+ turnover estate**), ranked **#1 in the data department for business modeling focus (76.1%)**.
-- **£6.4M ($8.1M) Annual Revenue Uplift** uncovered by architecting governed dimensional marts tracking **£26.9M** in commercial spend, customer retention, and NPS/CSAT attribution.
+- **£6.4M Annual Revenue Uplift** uncovered by architecting governed dimensional marts tracking **£26.9M** in commercial spend, customer retention, and NPS/CSAT attribution.
 - **£30K/Month (£360K/Yr) Cloud FinOps Savings** leading an enterprise migration from legacy SQL Server/Oracle to **Google Cloud BigQuery**, plus **40% fewer scanned query bytes** via strategic date partitioning and multi-column clustering.
 - **22–25% Lower Warehouse Cost & Latency** on **Amazon Redshift** through FinOps workload tuning, `DISTKEY`/`SORTKEY` optimization, and incremental merge materializations.
 - **45% → 97% Trusted Data Coverage (30% Fewer Incident Tickets)** by implementing automated **dbt test suites**, enforced data contracts, SQLFluff linting, Slim CI (`state:modified+`), and source freshness SLAs.
